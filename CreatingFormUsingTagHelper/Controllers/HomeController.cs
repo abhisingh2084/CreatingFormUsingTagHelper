@@ -13,9 +13,16 @@ namespace CreatingFormUsingTagHelper.Controllers
             _logger = logger;
         }
 
+        [Route("")]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public string Index(Employee e)
+        {
+            return  "Name : " + e.Name + "Gender: " + e.Gender;
         }
 
         public IActionResult Privacy()
